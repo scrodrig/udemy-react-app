@@ -30,7 +30,7 @@ export const Navigation = () => {
             {routes.map(({ path, Component }) => (
               <Route key={path} path={path} element={<Component />} />
             ))}
-            <Route path="/*" element={<Navigate to="lazy1" replace />} />
+            <Route path="/*" element={<Navigate to="no-lazy" replace />} />
           </Routes>
         </div>
       </BrowserRouter>
