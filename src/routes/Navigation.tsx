@@ -1,7 +1,6 @@
 import { BrowserRouter } from 'react-router-dom';
 import { Routes, Route, NavLink, Navigate } from 'react-router-dom';
 import logo from '../logo.svg';
-import { routes } from './routes';
 import { Suspense } from 'react';
 
 export const Navigation = () => {
@@ -12,25 +11,35 @@ export const Navigation = () => {
           <nav>
             <img src={logo} alt="react-logo" />
             <ul>
-              {routes.map(({ to, name }) => (
-                <li key={to}>
-                  <NavLink
-                    to={to}
-                    className={({ isActive }) =>
-                      isActive ? 'nav-active' : ''
-                    }>
-                    {name}
-                  </NavLink>
-                </li>
-              ))}
+              <li>
+                <NavLink
+                  className={({ isActive }) => (isActive ? 'nav-active' : '')}
+                  to="/home">
+                  Home
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  className={({ isActive }) => (isActive ? 'nav-active' : '')}
+                  to="/about">
+                  About
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  className={({ isActive }) => (isActive ? 'nav-active' : '')}
+                  to="/users">
+                  Users
+                </NavLink>
+              </li>
             </ul>
           </nav>
 
           <Routes>
-            {routes.map(({ path, Component }) => (
-              <Route key={path} path={path} element={<Component />} />
-            ))}
-            <Route path="/*" element={<Navigate to="no-lazy" replace />} />
+            <Route path="about" element={<h1>About page</h1>} />
+            <Route path="users" element={<h1>Users page</h1>} />
+            <Route path="home" element={<h1>Home page</h1>} />
+            <Route path="/*" element={<Navigate to="home" replace />} />
           </Routes>
         </div>
       </BrowserRouter>

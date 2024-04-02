@@ -1,3 +1,4 @@
+//! Deprecated
 import { LazyExoticComponent, lazy } from 'react';
 import { NoLazy } from '../01-lazyload/pages';
 
