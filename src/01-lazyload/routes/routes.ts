@@ -1,6 +1,6 @@
 //! Deprecated
 import { LazyExoticComponent, lazy } from 'react';
-import { NoLazy } from '../01-lazyload/pages';
+import { NoLazy } from '../pages';
 
 type JSXComponent = () => JSX.Element;
 
@@ -14,7 +14,7 @@ interface Route {
 const LazyLayout = lazy(
   () =>
     import(
-      /*webpackChunkName: "LazyLayout"*/ '../01-lazyload/layout/LazyLayout'
+      /*webpackChunkName: "LazyLayout"*/ '../layout/LazyLayout'
     )
 );
 
