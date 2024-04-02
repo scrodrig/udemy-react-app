@@ -13,7 +13,7 @@ interface Props {
 }
 
 export const ProductCard = ({ product }: Props) => {
-  const { counter, increseBy } = useProduct(0);
+  const { counter, increaseBy  } = useProduct(0);
 
   return (
     <div className={styles.productCard}>
@@ -24,11 +24,11 @@ export const ProductCard = ({ product }: Props) => {
       />
       <span className={styles.productDescription}>{product.title}</span>
       <div className={styles.buttonsContainer}>
-        <button className={styles.buttonMinus} onClick={() => increseBy(-1)}>
+        <button className={styles.buttonMinus} onClick={() => increaseBy(-1)}>
           -
         </button>
         <div className={styles.countLabel}> {counter} </div>
-        <button className={styles.buttonAdd} onClick={() => increseBy(+1)}>
+        <button className={styles.buttonAdd} onClick={() => increaseBy(+1)}>
           +
         </button>
       </div>
