@@ -5,14 +5,10 @@ type useProductType = {
   increseBy: (value: number) => void;
 };
 
-type useProductProps = {
-  initialValue: number;
-};
-
-export const useProduct = ({ initialValue }: useProductProps): useProductType => {
+export const useProduct = (initialValue: number): useProductType => {
   const [counter, setCounter] = useState(initialValue);
 
-  const increseBy = (value: number) => {
+  const increseBy = (value = 1) => {
     setCounter((prev) => Math.max(prev + value, 0));
   };
 

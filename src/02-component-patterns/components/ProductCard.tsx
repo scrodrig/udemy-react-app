@@ -3,7 +3,7 @@ import noImage from '../assets/no-image.jpg';
 import { useProduct } from '../hooks/useProduct';
 
 export const ProductCard = () => {
-  const { counter, increseBy } = useProduct();
+  const { counter, increseBy } = useProduct(0);
 
   return (
     <div className={styles.productCard}>
