@@ -18,11 +18,11 @@ export const ShoppingPage = () => {
           <ProductButtons />
         </ProductCard>
 
-        {/* <ProductCard product={product}>
+        <ProductCard product={product}>
           <ProductCard.Image />
           <ProductCard.Title title={'Coffee'} />
           <ProductCard.Buttons />
-        </ProductCard> */}
+        </ProductCard>
       </div>
     </div>
   );
