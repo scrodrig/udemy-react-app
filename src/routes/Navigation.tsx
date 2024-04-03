@@ -13,23 +13,24 @@ export const Navigation = () => {
             <img src={logo} alt="react-logo" />
             <ul>
               <li>
-                <NavLink
-                  className={({ isActive }) => (isActive ? 'nav-active' : '')}
-                  to="/shopping">
-                  Shopping
+                <NavLink className={({ isActive }) => (isActive ? 'nav-active' : '')} to="/home">
+                  Home
                 </NavLink>
               </li>
               <li>
                 <NavLink
                   className={({ isActive }) => (isActive ? 'nav-active' : '')}
-                  to="/about">
+                  to="/compound-component-pattern">
+                  Compound Pattern
+                </NavLink>
+              </li>
+              <li>
+                <NavLink className={({ isActive }) => (isActive ? 'nav-active' : '')} to="/about">
                   About
                 </NavLink>
               </li>
               <li>
-                <NavLink
-                  className={({ isActive }) => (isActive ? 'nav-active' : '')}
-                  to="/users">
+                <NavLink className={({ isActive }) => (isActive ? 'nav-active' : '')} to="/users">
                   Users
                 </NavLink>
               </li>
@@ -37,10 +38,11 @@ export const Navigation = () => {
           </nav>
 
           <Routes>
+            <Route path="home" element={<h1>Home page</h1>} />
             <Route path="about" element={<h1>About page</h1>} />
             <Route path="users" element={<h1>Users page</h1>} />
-            <Route path="shopping" element={<ShoppingPage />} />
-            <Route path="/*" element={<Navigate to="about" replace />} />
+            <Route path="compound-component-pattern" element={<ShoppingPage />} />
+            <Route path="/*" element={<Navigate to="home" replace />} />
           </Routes>
         </div>
       </BrowserRouter>
