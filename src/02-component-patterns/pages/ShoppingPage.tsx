@@ -13,9 +13,9 @@ export const ShoppingPage = () => {
       <hr />
       <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
         <ProductCard product={product}>
-          <ProductImage/>
-          <ProductTitle title={product.title} />
-          <ProductButtons counter={0} increaseBy={function (value: number): void {
+          <ProductCard.Image/>
+          <ProductCard.Title title={'Coffee'} />
+          <ProductCard.Buttons counter={0} increaseBy={function (value: number): void {
             throw new Error('Function not implemented.');
           } }  />
         </ProductCard>
