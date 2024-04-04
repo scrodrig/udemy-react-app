@@ -4,6 +4,7 @@ import { InitalValues, Product, onChangeArgs } from '../interfaces/interfaces';
 type useProductType = {
   counter: number;
   increaseBy: (value: number) => void;
+  maxCount: number | undefined;
 };
 
 interface useProductArgs {
@@ -44,5 +45,6 @@ export const useProduct = ({
   return {
     counter,
     increaseBy,
+    maxCount: initialValues?.maxCount,
   };
 };

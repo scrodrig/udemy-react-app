@@ -17,12 +17,16 @@ export const OtherShoppingPage = () => {
           count: 4,
           maxCount: 10,
         }}>
-        <ProductCard.Image
-          className="custom-image"
-          style={{ boxShadow: '10px 10px 10px rgba(0,0,0,0.2)' }}
-        />
-        <ProductCard.Title className="text-bold" title={'Coffee'} />
-        <ProductCard.Buttons className="custom-buttons" />
+        {() => (
+          <>
+            <ProductCard.Image
+              className="custom-image"
+              style={{ boxShadow: '10px 10px 10px rgba(0,0,0,0.2)' }}
+            />
+            <ProductCard.Title className="text-bold" title={'Coffee'} />
+            <ProductCard.Buttons className="custom-buttons" />
+          </>
+        )}
       </ProductCard>
     </div>
   );
