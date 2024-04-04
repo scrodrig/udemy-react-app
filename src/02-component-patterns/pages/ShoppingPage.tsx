@@ -7,6 +7,12 @@ const product = {
   img: './coffee-mug.png',
 };
 
+const product2 = {
+  id: '1',
+  title: 'Coffee mug meme',
+  img: './coffee-mug2.png',
+};
+
 export const ShoppingPage = () => {
   return (
     <div>
@@ -19,7 +25,7 @@ export const ShoppingPage = () => {
           <ProductButtons className="custom-buttons" />
         </ProductCard>
 
-        <ProductCard product={product} className="bg-dark text-white">
+        <ProductCard product={product2} className="bg-dark text-white">
           <ProductCard.Image
             className="custom-image"
             style={{ boxShadow: '10px 10px 10px rgba(0,0,0,0.2)' }}
@@ -34,7 +40,7 @@ export const ShoppingPage = () => {
             backgroundColor: '#70D1F8',
           }}>
           <ProductImage style={{ boxShadow: '10px 10px 10px rgba(0,0,0,0.2)' }} />
-          <ProductTitle style={{ fontWeight: 'bold' }} />
+          <ProductTitle title={'Style componentes'} style={{ fontWeight: 'bold' }} />
           <ProductButtons
             style={{
               display: 'flex',
