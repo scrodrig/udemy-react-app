@@ -3,6 +3,7 @@ import { Routes, Route, NavLink, Navigate } from 'react-router-dom';
 import logo from '../logo.svg';
 import { Suspense } from 'react';
 import { ShoppingPage } from '../02-component-patterns/pages/ShoppingPage';
+import { OtherShoppingPage } from '../02-component-patterns/pages/OtherShoppingPage';
 
 export const Navigation = () => {
   return (
@@ -25,6 +26,13 @@ export const Navigation = () => {
                 </NavLink>
               </li>
               <li>
+                <NavLink
+                  className={({ isActive }) => (isActive ? 'nav-active' : '')}
+                  to="/other-pattern-FC-SI">
+                  RC + State Init
+                </NavLink>
+              </li>
+              <li>
                 <NavLink className={({ isActive }) => (isActive ? 'nav-active' : '')} to="/about">
                   About
                 </NavLink>
@@ -42,6 +50,7 @@ export const Navigation = () => {
             <Route path="about" element={<h1>About page</h1>} />
             <Route path="users" element={<h1>Users page</h1>} />
             <Route path="compound-component-pattern" element={<ShoppingPage />} />
+            <Route path="other-pattern-FC-SI" element={<OtherShoppingPage />} />
             <Route path="/*" element={<Navigate to="home" replace />} />
           </Routes>
         </div>
