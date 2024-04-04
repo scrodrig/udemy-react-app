@@ -5,6 +5,8 @@ type useProductType = {
   counter: number;
   increaseBy: (value: number) => void;
   maxCount: number | undefined;
+  isMaxCountReached: boolean;
+  reset: ()=>void;
 };
 
 interface useProductArgs {
@@ -23,6 +25,10 @@ export const useProduct = ({
   const [counter, setCounter] = useState<number>(initialValues?.count || value);
 
   const isMounted = useRef(false);
+
+  const reset = () => {
+    setCounter(initialValues?.count || value);
+  };
 
   useEffect(() => {
     if (!isMounted.current) return;
@@ -46,5 +52,7 @@ export const useProduct = ({
     counter,
     increaseBy,
     maxCount: initialValues?.maxCount,
+    isMaxCountReached: !!initialValues?.count && initialValues.maxCount === counter,
+    reset,
   };
 };
