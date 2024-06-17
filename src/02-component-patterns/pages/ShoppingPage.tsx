@@ -6,6 +6,7 @@ import { useShoppingCart } from '../hooks/useShoppingCart';
 export const ShoppingPage = () => {
   const { onProductCountChange, shoppingCart } = useShoppingCart();
 
+  
   return (
     <div>
       <h1>Shopping Store</h1>
